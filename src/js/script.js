@@ -38,6 +38,11 @@ container.append(containerTextResult);
 const boxText = document.createElement("div");
 boxText.classList.add("text-result");
 containerTextResult.append(boxText);
+const imgText = document.createElement("img");
+imgText.src = "./assets/find.svg";
+imgText.classList.add("search-img");
+const containerTexts = document.createElement("div");
+containerTexts.classList.add("containerTexts");
 const textResult = document.createElement("div");
 textResult.classList.add("not-found-text");
 textResult.innerText = "Nenhuma mensagem encontrada";
@@ -45,4 +50,5 @@ const messageRequired = document.createElement("div");
 messageRequired.classList.add("message-required-text");
 messageRequired.innerText =
   "Digite um texto que você deseja criptografar ou descriptografar.";
-boxText.append(textResult, messageRequired);
+containerTexts.append(textResult, messageRequired);
+boxText.append(imgText, containerTexts);
