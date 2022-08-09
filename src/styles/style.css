@@ -1,4 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+
+/* #region root */
 :root{
     --white:#FFFFFF;
     --light-blue-100:#F3F5FC;
@@ -17,9 +20,15 @@
     --grey-400:#495057;
     --grey-500:#343A40;
 }
+/* #endregion*/
+
+/* #region all*/
 *{
-    font-family: "Inter";
+    font-family: 'Inter', sans-serif;
 }
+/* #endregion*/
+
+/* #region mobile first*/
 button{
     cursor: pointer;
 }
@@ -33,46 +42,41 @@ body{
     min-height: 100vh;
     flex-direction: column; 
     justify-content: space-between;
+    align-items: center;
 }
 .container-logo{
+    width: 100%;
     height: 48px;
-    padding-top:24px;
-    padding-left: 16px;
-    margin-bottom:80px;
+    padding-top: 10px;
+    padding-left: 25px;
 }
 .logo{
-    width:32px;
+    width: auto;
     height: 48px;
 }
 .middle-container{
+    width: 90%;
+/*usar @media*/
 
-    @media(min-width:600px){
-        
-    }
-    @media(min-width:1024px){
-        
-    }
+
 }
 .input-text-encrypt{
     font-weight: 400;
     font-size: 32px;
-    width: 300px;
-    min-height:200px;
+    width: 100%;
+    min-height:300px;
     background-color: transparent;
     color: var(--dark-blue-300);
-    overflow: auto;
+    overflow: scroll;
     resize:none;
     border: none;
     border-radius:7px;
     outline: none;
 }
 .container-img{
-    width: auto;
+    min-width: 100%;
     display: flex;
-    flex-direction: row;
-    @media(min-width:600px){
-        
-    }
+  
 }
 .attencion-img{
     width: 16px;
@@ -86,10 +90,13 @@ color: var(--grey-500);
 }
 .container-btn{
 display: flex;
-height: 150px;
+width: 80%;
+height: 80%;
 justify-content: space-between;
 flex-direction: column;
+
 }
+
 #encrypt-btn{
 display: flex;
 flex-direction: row;
@@ -104,6 +111,7 @@ border-radius: 24px;
 font-weight: 400;
 font-size: 16px;
 color: var(--white);
+margin-bottom: 15px;
 }
 #decrypt-btn{
 display: flex;
@@ -114,7 +122,7 @@ padding: 24px;
 width: 300px;
 height: 67px;
 background:var(--light-blue-100);
-border-color: 10px solid var(--dark-blue-300);
+border: 1px solid var(--dark-blue-300);
 border-radius: 24px;
 font-weight: 400;
 font-size: 16px;
@@ -125,39 +133,92 @@ color:var(--dark-blue-300);
 
 .container-text-result{
     display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
     
 }
 .text-result{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    width: 327px;
+    align-items: center;
+    width: 300px;
     height: 186px;
     border-radius: 32px;
     color:var(--white);
     margin-bottom: 20px;
     padding: 10px;
     box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
+    margin-bottom: 20px;
 }
 .search-img{
-    display:none;
-    @media(min-width:1024px){
-    width:336px;
-    height:304px;
-        
-    }
+    display:none; 
 }
+
 .not-found-text{
-width: 100%;
-font-style: normal;
-font-weight: 700;
-font-size: 18px;
-color:var(--grey-500);
-margin: 16px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    font-weight: 700;
+    font-size: 18px;
+    color:var(--grey-500);
+    margin: 4px;
 }
 .message-required-text{
-font-weight: 400;
-font-size: 16px;
-color: var(--grey-400);
-margin: 16px;
+    display: flex;
+    font-weight: 400;
+    font-size: 16px;
+    color: var(--grey-400);
+    margin: 16px;
 }
+/* #endregion*/
+
+/* #region Tablet*/
+@media(min-width:600px){
+    .container-btn{
+    flex-direction:row;
+    justify-content:space-evenly;
+    align-items: center;
+    width: 100%;
+    }
+    .input-text-encrypt {
+    min-height: 400px;
+    }
+    #encrypt-btn{
+    width: 400px;
+    margin: 0;
+    margin-right: 20px;
+    }
+    #decrypt-btn{
+        width: 400px;
+    }
+    .text-result{
+        width: 80%;
+        margin-bottom: 50px;
+        ;
+        
+    }
+    .not-found-text{
+ 
+    }
+    .message-required-text{
+        align-items: center ;
+     
+    }
+    }
+    /* #endregion */
+
+    /* #region Desktop*/
+    @media(min-width:1024px){
+        #main-container{
+        flex-direction: row;
+  
+        }
+        .container-logo{
+       
+        
+        }
+        
+        }
+        /* #endregion */

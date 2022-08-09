@@ -1,19 +1,12 @@
-//pegando elemento principal
 const container = document.getElementById("main-container");
-//criando container
 const titleContainer = document.createElement("div");
-//adicionando classe
 titleContainer.classList.add("container-logo");
-//criando tag img
 const logoImg = document.createElement("img");
 logoImg.classList.add("logo");
-//colocando caminho pro img
 logoImg.src = "./assets/logo.svg";
-//adicionando texto alternativo pro img
 logoImg.alt = "Logo Alura";
 titleContainer.appendChild(logoImg);
 container.appendChild(titleContainer);
-
 const middleContainer = document.createElement("div");
 container.appendChild(middleContainer);
 middleContainer.classList.add("middle-container");
