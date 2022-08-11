@@ -209,7 +209,7 @@ color:var(--dark-blue-300);
     }
     /* #endregion */
 
-    /* #region Desktop*/
+/* #region Desktop*/
     @media(min-width:1024px){
         #main-container{
         flex-direction: row;

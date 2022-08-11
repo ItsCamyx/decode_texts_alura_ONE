@@ -1,3 +1,4 @@
+//#region criação das tags html e vinculação de tags
 const container = document.getElementById("main-container");
 const titleContainer = document.createElement("div");
 titleContainer.classList.add("container-logo");
@@ -52,3 +53,6 @@ messageRequired.innerText =
   "Digite um texto que você deseja criptografar ou descriptografar.";
 containerTexts.append(textResult, messageRequired);
 boxText.append(imgText, containerTexts);
+//#endregion
+
+//#region Listener
