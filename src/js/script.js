@@ -56,3 +56,14 @@ boxText.append(imgText, containerTexts);
 //#endregion
 
 //#region Listener
+
+//#region functions
+
+const handleClickEncrypt = () => {
+  let encryptMessage = encrypt();
+};
+
+const handleClickDecrypt = () => {
+  let encryptMessage = decrypt();
+};
+//#endregion
