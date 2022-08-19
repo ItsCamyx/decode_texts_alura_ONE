@@ -164,6 +164,9 @@ color:var(--dark-blue-300);
     font-weight: 700;
     font-size: 18px;
     color:var(--grey-500);
+    background-color: transparent;
+    border: none;
+    resize:none;
 
 }
 .message-required-text{

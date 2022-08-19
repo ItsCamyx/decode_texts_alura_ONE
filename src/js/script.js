@@ -44,7 +44,7 @@ imgText.src = "./assets/find.svg";
 imgText.classList.add("search-img");
 const containerTexts = document.createElement("div");
 containerTexts.classList.add("containerTexts");
-const textResult = document.createElement("div");
+const textResult = document.createElement("textarea");
 textResult.classList.add("not-found-text");
 textResult.innerText = "Nenhuma mensagem encontrada";
 const messageRequired = document.createElement("div");
@@ -57,13 +57,51 @@ boxText.append(imgText, containerTexts);
 
 //#region Listener
 
+encryptBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  handleClickEncrypt();
+});
+decryptBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  handleClickDecrypt();
+});
+
 //#region functions
 
 const handleClickEncrypt = () => {
-  let encryptMessage = encrypt();
+  let textValue = inputText.value;
+  if (textValue.length > 0) {
+    // let encryptMessage = encrypt(textValue);
+    textResult.innerText = "";
+    messageRequired.innerText = "";
+  } else {
+    textResult.classList.add("not-found-text");
+    textResult.innerText = "Nenhuma mensagem encontrada";
+  }
 };
 
-const handleClickDecrypt = () => {
-  let encryptMessage = decrypt();
+let rulesKeys = [
+  ["a", "ai"],
+  ["e", "enter"],
+  ["i", "imes"],
+  ["o", "ober"],
+  ["u", "ufat"],
+];
+const encrypt = (value) => {
+  console.log(value);
+  for (let i = 0; i < rulesKeys.length; i++) {}
 };
+encrypt(inputText.value);
+const handleClickDecrypt = () => {
+  let textValue = inputText.value;
+  if (textValue.length > 0) {
+    // let decryptMessage = decrypt();
+    textResult.innerText = "";
+    messageRequired.innerText = "";
+  } else {
+    textResult.classList.add("not-found-text");
+    textResult.innerText = "Nenhuma mensagem encontrada";
+  }
+};
+const decrypt = () => {};
 //#endregion
