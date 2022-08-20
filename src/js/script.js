@@ -71,37 +71,63 @@ decryptBtn.addEventListener("click", (e) => {
 const handleClickEncrypt = () => {
   let textValue = inputText.value;
   if (textValue.length > 0) {
-    // let encryptMessage = encrypt(textValue);
-    textResult.innerText = "";
+    let encryptMessage = encrypt(textValue);
+    textResult.innerText = encryptMessage;
+    textResult.classList.remove("not-found-text");
+    textResult.classList.add("found-text");
+    imgText.src = "";
     messageRequired.innerText = "";
-  } else {
-    textResult.classList.add("not-found-text");
-    textResult.innerText = "Nenhuma mensagem encontrada";
   }
 };
+/* 1 - separar a string recebida e transformar em array - ok
+   2 - contar com o for substituir a palavra recebida pelo ruleKeys - em andamento
+   3 - depois de substituido juntar o array e transformar em string
 
-let rulesKeys = [
-  ["a", "ai"],
-  ["e", "enter"],
-  ["i", "imes"],
-  ["o", "ober"],
-  ["u", "ufat"],
-];
-const encrypt = (value) => {
-  console.log(value);
-  for (let i = 0; i < rulesKeys.length; i++) {}
+
+*/
+
+const encrypt = (valueEncrypt) => {
+  let rulesKeys = [
+    ["a", "ai"],
+    ["e", "enter"],
+    ["i", "imes"],
+    ["o", "ober"],
+    ["u", "ufat"],
+  ];
+  let palavraRecebida = valueEncrypt.toLowerCase();
+  let palavraEspalhada = palavraRecebida.split("");
+  console.log(palavraEspalhada);
+  for (let i = 0; i < palavraEspalhada.length; i++) {
+    for (let j = 0; j < rulesKeys.length; j++) {}
+  }
+
+  // return valueEncrypt;
 };
-encrypt(inputText.value);
+encrypt("camila");
+
 const handleClickDecrypt = () => {
   let textValue = inputText.value;
   if (textValue.length > 0) {
-    // let decryptMessage = decrypt();
-    textResult.innerText = "";
+    let decryptMessage = decrypt(textValue);
+    textResult.innerText = decryptMessage;
+    imgText.src = "";
     messageRequired.innerText = "";
-  } else {
-    textResult.classList.add("not-found-text");
-    textResult.innerText = "Nenhuma mensagem encontrada";
   }
 };
-const decrypt = () => {};
+const decrypt = (valueDecrypt) => {
+  let rulesKeys = [
+    ["a", "ai"],
+    ["e", "enter"],
+    ["i", "imes"],
+    ["o", "ober"],
+    ["u", "ufat"],
+  ];
+  valueDecrypt = valueDecrypt.toLowerCase();
+  for (let i = 0; i < rulesKeys.length; i++) {
+    if (valueDecrypt.includes(rulesKeys[i][1])) {
+      valueDecrypt = valueDecrypt.replaceAll(rulesKeys[i][1], rulesKeys[i][0]);
+    }
+  }
+  return valueDecrypt;
+};
 //#endregion

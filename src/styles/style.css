@@ -160,14 +160,25 @@ color:var(--dark-blue-300);
 }
 
 .not-found-text{
-    width: 100%;
+    width: 70%;
     font-weight: 700;
     font-size: 18px;
     color:var(--grey-500);
     background-color: transparent;
     border: none;
     resize:none;
-
+}
+.found-text{
+    width: 300px;
+    height: 150px;
+    font-weight: 700;
+    font-size: 18px;
+    color:var(--grey-500);
+    background-color: transparent;
+    border: none;
+    resize:none;
+    overflow-x: scroll;
+    
 }
 .message-required-text{
     display: flex;
@@ -204,6 +215,13 @@ color:var(--dark-blue-300);
         height: 133px;
         
     }
+    .not-found-text{
+        width: 40vw;
+    }
+    .found-text{
+        width: 700px;
+        height: 150px;
+    }
     .message-required-text{
         align-items: center ;
      
@@ -238,6 +256,14 @@ color:var(--dark-blue-300);
         .search-img{
         display:flex;
         }
+        .not-found-text{
+            width: 16vw;
+        }
+        .found-text{
+            width: 35vw;
+            height: 700px;
+        }
+
         .input-text-encrypt{
             overflow-x: hidden;
             overflow-y: scroll; 
