@@ -96,14 +96,23 @@ const encrypt = (valueEncrypt) => {
   ];
   let palavraRecebida = valueEncrypt.toLowerCase();
   let palavraEspalhada = palavraRecebida.split("");
-  console.log(palavraEspalhada);
-  for (let i = 0; i < palavraEspalhada.length; i++) {
-    for (let j = 0; j < rulesKeys.length; j++) {}
-  }
-
-  // return valueEncrypt;
+  let fraseCompleta = [];
+  palavraEspalhada.map((letra) => {
+    let regra = null;
+    for (let i = 0; i < rulesKeys.length; i++) {
+      if (letra === rulesKeys[i][0]) {
+        regra = rulesKeys[i][1];
+        break;
+      }
+    }
+    if (regra === null) {
+      fraseCompleta.push(letra);
+    } else {
+      fraseCompleta.push(regra);
+    }
+  });
+  return (fraseCompleta = fraseCompleta.join(""));
 };
-encrypt("camila");
 
 const handleClickDecrypt = () => {
   let textValue = inputText.value;
